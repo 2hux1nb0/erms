@@ -1,6 +1,6 @@
 # 说明
 ## 一.建立数据库classroom_manage
-    * 所包含的表及字段
+* 所包含的表及字段
         * [1.用户表user]
             * id                varchar(40) not null,primary key
             * username          varchar(20) not null
