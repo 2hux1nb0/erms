@@ -1,4 +1,4 @@
-# 一.建立数据库classroom_manage
+## 一.建立数据库classroom_manage
     * [所包含的表及字段]
         * [1.用户表user]
             * id                varchar(40) not null,primary key
@@ -28,7 +28,7 @@
             * end_section       int(1) not null
             * status            int(1)
             
-# 二.搭建开发环境
+## 二.搭建开发环境
     * [1.所用环境]
         * [主要:]
             * MyEclipse 6.6
@@ -47,7 +47,7 @@
         * log4j开发
         * jstl开发包
         
-# 三.创建组织程序的包  
+## 三.创建组织程序的包  
         * cn.classroom.dao
         * cn.classroom.dao.impl
         * cn.classroom.domain
