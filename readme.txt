@@ -1,27 +1,28 @@
- >-------------------------------ÔÛÃÇÓÃÕâ¸öÄ£°å-------------------------<
-       >---------ÊÔÒ»ÏÂ00x1----------<
-Ò».½¨Á¢Êý¾Ý¿âclassroom_manage
-	Ëù°üº¬µÄ±í¼°×Ö¶Î
-		1.ÓÃ»§±íuser
+ >-------------------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½-------------------------<
+       >---------ï¿½ï¿½Ò»ï¿½ï¿½00x1----------<
+       banbenç‰ˆæœ¬0.0.2/15:03:42
+Ò».ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½classroom_manage
+	ï¿½ï¿½ï¿½Ä±?ï¿½Ö¶ï¿½
+		1.ï¿½Ã»ï¿½ï¿½ï¿½user
 			id                varchar(40) not null,primary key
 			username          varchar(20) not null
 			password          varchar(32) not null
 			type              varchar(3) not null
-		2.½ÌÊÒ±íclassroom
+		2.ï¿½ï¿½ï¿½Ò±ï¿½classroom
 			room_no           varchar(4) not null,primary key
 			location          varchar(40) not null
-		3.¿Î³Ì±ícourse
+		3.ï¿½Î³Ì±ï¿½course
 			course_id         varchar(4) not null,primary key
 			name              varchar(20) not null
 			teacher           varchar(20) not null
-		4.¿Î³Ì-½ÌÊÒ°²ÅÅ±íarrangement
+		4.ï¿½Î³ï¿½-ï¿½ï¿½ï¿½Ò°ï¿½ï¿½Å±ï¿½arrangement
 			id                varchar(40) not null,primary key
 			room_no           varchar(4) not null
 			course_id         varchar(4) not null
 			day               int(1) not null
 			start_section     int(1) not null
 			end_section       int(1) not null
-		5.»î¶¯±íactivity
+		5.ï¿½î¶¯ï¿½ï¿½activity
 			aid               varchar(40) not null,primary key
 			name              varchar(40) not null
 			room_no           varchar(4) not null
@@ -30,26 +31,26 @@
 			end_section       int(1) not null
 			status            int(1)
 			
-¶þ.´î½¨¿ª·¢»·¾³
-	1.ËùÓÃ»·¾³
-		Ö÷Òª:
+ï¿½ï¿½.ï¿½î½¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	1.ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
+		ï¿½ï¿½Òª:
 		MyEclipse 6.6
 		MySql 5.0
 		Apache-Tomcat-6.0.44
-		¸¨Öú:
+		ï¿½ï¿½ï¿½ï¿½:
 		Dreamweaver CS6
 		Photoshop CS6
-	2.¿ª·¢ÓïÑÔ
+	2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Java,Jsp
-	3.Èí¼þ¼Ü¹¹
+	3.ï¿½ï¿½ï¿½ï¿½Ü¹ï¿½
 		B/S
-	4.ËùÐèÒªµÄÍâ²¿jar°ü
-		mysqlÇý¶¯
+	4.ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½â²¿jarï¿½ï¿½
+		mysqlï¿½ï¿½
         beanUtils
-        log4j¿ª·¢
-        jstl¿ª·¢°ü
+        log4jï¿½ï¿½ï¿½ï¿½
+        jstlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         
-Èý.´´½¨×éÖ¯³ÌÐòµÄ°ü	
+ï¿½ï¿½.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¯ï¿½ï¿½ï¿½ï¿½Ä°ï¿½	
 		cn.classroom.dao
 		cn.classroom.dao.impl
 		cn.classroom.domain
