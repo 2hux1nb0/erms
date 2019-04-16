@@ -11,7 +11,7 @@ import cn.classroom.domain.User;
 import cn.classroom.exception.DaoException;
 import cn.classroom.utils.JdbcUtils;
 
-//UserDao的实现类
+//UserDao锟斤拷实锟斤拷锟斤拷
 public class UserDaoImpl implements UserDao {
 	public void addUser(User user) {
 		Connection conn = null;

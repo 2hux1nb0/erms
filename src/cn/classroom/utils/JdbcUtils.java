@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-//Á¬½ÓÊý¾Ý¿âµÄ¹¤¾ßÀà
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
 public class JdbcUtils {
 	private static Properties config = new Properties();
 
