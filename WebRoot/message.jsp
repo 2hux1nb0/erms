@@ -16,7 +16,9 @@ body {
 	padding: 0px;
 	width: 100%;
 	height: 100%;
-	background: url(../images/background.gif);
+	background-image: url(../images/background.gif);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	overflow: hidden;
 }
 
@@ -35,7 +37,7 @@ body {
 	</head>
 
 	<body>
-	<meta http-equiv="refresh" content="3; url=${pageContext.request.contextPath }/index.jsp">
+	<%-- <meta http-equiv="refresh" content="3; url=${pageContext.request.contextPath }/index.jsp"> --%>
 	<div id="container">
 		<span id="message">${message }<br>浏览器将会在3秒后跳转到首页。</span>
 	</div>
