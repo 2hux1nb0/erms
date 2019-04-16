@@ -1,5 +1,6 @@
 var canvas = document.createElement("canvas");
 var cxt = canvas.getContext('2d');
+var pause = false;
 document.onreadystatechange = function(){
 	if(document.readyState == 'complete'){
 		canvas.width = document.body.offsetWidth;
@@ -15,18 +16,21 @@ document.onreadystatechange = function(){
  * 绘制一片星空
  */
 function drawAll(){
-	cxt.fillStyle = 'black';
-	cxt.fillRect(0, 0, canvas.width, canvas.height);
-	for (var i = 0; i <= 300; i++) {
-		var fiveStart = {};
-		fiveStart.bigRadius = Math.random() * 6 + 6;
-		fiveStart.smallRadius = fiveStart.bigRadius / 2.0;
-		fiveStart.offsetX = Math.random() * canvas.width;
-		fiveStart.offsetY = Math.random() * canvas.height;
-		fiveStart.RotationAngle = Math.random() * 360;
-		drawFiveStar(cxt, fiveStart);
+	var starttime = new Date();
+    debugger ;if (!(new Date() - starttime > 50)) {
+		cxt.fillStyle = 'black';
+		cxt.fillRect(0, 0, canvas.width, canvas.height);
+		for (var i = 0; i <= 300; i++) {
+			var fiveStart = {};
+			fiveStart.bigRadius = Math.random() * 6 + 6;
+			fiveStart.smallRadius = fiveStart.bigRadius / 2.0;
+			fiveStart.offsetX = Math.random() * canvas.width;
+			fiveStart.offsetY = Math.random() * canvas.height;
+			fiveStart.RotationAngle = Math.random() * 360;
+			drawFiveStar(cxt, fiveStart);
+		}
+		document.body.style.backgroundImage = 'url("'+canvas.toDataURL("image/png")+'")';
 	}
-	document.body.style.backgroundImage = 'url("'+canvas.toDataURL("image/png")+'")';
 	setTimeout(drawAll,100);
 //	requestAnimationFrame(drawAll)
 }

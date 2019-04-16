@@ -5,7 +5,7 @@
 		<title>教室信息管理系统</title>
 		<link type="text/css" rel="stylesheet"
 			href="${pageContext.request.contextPath}/css/index.css">
-			<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
+			<script type="text/javascript" src="${pageContext.request.contextPath}/js/background.js"></script>
 	</head>
 
 	<body>
@@ -16,7 +16,7 @@
 					<form action="${pageContext.request.contextPath}/servlet/LoginServlet" method="post">
 						<div id="input">
 							<div id="text" class="center">
-								<input type="text" name="username" value="${form.username }"/>
+								<input type="text" name="username" value="${form.username }" checked="checked"/>
 							</div>
 							<div id="text" class="center">
 								<input type="password" name="password" value="${form.password }"/>
