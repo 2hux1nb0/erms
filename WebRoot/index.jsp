@@ -16,7 +16,7 @@
 					<form action="${pageContext.request.contextPath}/servlet/LoginServlet" method="post">
 						<div id="input">
 							<div id="text" class="center">
-								<input type="text" name="username" value="${form.username }" checked="checked"/>
+								<input type="text" name="username" value="${form.username }"/>
 							</div>
 							<div id="text" class="center">
 								<input type="password" name="password" value="${form.password }"/>
@@ -26,7 +26,7 @@
 							</div>
 						</div>
 						<div id="radio">
-							<input type="radio" name="type" value="student" ${form.type=='student'?'checked':'' }/>
+							<input type="radio" name="type" value="student" ${(form.type=='student'||form.type==null)?'checked':'' }/>
 							<span>学生</span>
 							<input type="radio" name="type" value="teacher" ${form.type=='teacher'?'checked':'' }/>
 							<span>教师</span>

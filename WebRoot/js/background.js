@@ -1,38 +1,48 @@
 var canvas = document.createElement("canvas");
 var cxt = canvas.getContext('2d');
-var pause = false;
-document.onreadystatechange = function(){
-	if(document.readyState == 'complete'){
+var _threshold = 160;
+var _open = false;
+var _orientation = null;
+document.onreadystatechange = function() {
+	if (document.readyState == 'complete') {
 		canvas.width = document.body.offsetWidth;
 		canvas.height = document.body.offsetHeight;
 		document.addEventListener("onresize", function(e) {
 			canvas.width = document.body.offsetWidth;
 			canvas.height = document.body.offsetHeight;
 		})
-		drawAll();
+		run();
 	}
+}
+function run() {
+	var widthThreshold = window.outerWidth - window.innerWidth > _threshold;
+	var heightThreshold = window.outerHeight - window.innerHeight > _threshold;
+	var orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+	!(!(heightThreshold && widthThreshold) 
+			&&((window.Firebug && window.Firebug.chrome 
+					&& window.Firebug.chrome.isInitialized) 
+					|| widthThreshold || heightThreshold)) 
+					&& drawAll();
+	setTimeout(run, 150);
+//	requestAnimationFrame(run)
 }
 /**
  * 绘制一片星空
  */
-function drawAll(){
-	var starttime = new Date();
-    debugger ;if (!(new Date() - starttime > 50)) {
-		cxt.fillStyle = 'black';
-		cxt.fillRect(0, 0, canvas.width, canvas.height);
-		for (var i = 0; i <= 300; i++) {
-			var fiveStart = {};
-			fiveStart.bigRadius = Math.random() * 6 + 6;
-			fiveStart.smallRadius = fiveStart.bigRadius / 2.0;
-			fiveStart.offsetX = Math.random() * canvas.width;
-			fiveStart.offsetY = Math.random() * canvas.height;
-			fiveStart.RotationAngle = Math.random() * 360;
-			drawFiveStar(cxt, fiveStart);
-		}
-		document.body.style.backgroundImage = 'url("'+canvas.toDataURL("image/png")+'")';
+function drawAll() {
+	cxt.fillStyle = 'black';
+	cxt.fillRect(0, 0, canvas.width, canvas.height);
+	for (var i = 0; i <= 300; i++) {
+		var fiveStart = {};
+		fiveStart.bigRadius = Math.random() * 6 + 6;
+		fiveStart.smallRadius = fiveStart.bigRadius / 2.0;
+		fiveStart.offsetX = Math.random() * canvas.width;
+		fiveStart.offsetY = Math.random() * canvas.height;
+		fiveStart.RotationAngle = Math.random() * 360;
+		drawFiveStar(cxt, fiveStart);
 	}
-	setTimeout(drawAll,100);
-//	requestAnimationFrame(drawAll)
+	document.body.style.backgroundImage = 'url("' + canvas.toDataURL("image/png") + '")';
 }
 
 /**
