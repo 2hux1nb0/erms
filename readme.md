@@ -34,7 +34,6 @@
         * MyEclipse 6.6
         * MySql 5.0
         * Apache-Tomcat-6.0.44
-         
     * [辅助:]
         * Dreamweaver CS6
         * Photoshop CS6
