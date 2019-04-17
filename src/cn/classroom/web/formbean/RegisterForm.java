@@ -59,51 +59,48 @@ public class RegisterForm {
 		this.checkcode = checkcode;
 	}
 
-	// ÓÃ»§Ãû²»ÄÜÎª¿Õ,²¢ÇÒÒªÎª3-8Î»Êı×Ö»ò×ÖÄ¸
-	// ÃÜÂë²»ÄÜÎª¿Õ,²¢ÇÒÒªÎª3-8Î»Êı×Ö»ò×ÖÄ¸
-	// È·ÈÏÃÜÂë²»ÄÜÎª¿Õ,²¢ÇÒÒªºÍÃÜÂëÒ»ÖÂ
 	public boolean validate() {
 		boolean isOK = true;
 
 		if (this.username == null || this.username.trim().equals("")) {
 			isOK = false;
-			errors.put("username", "ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡");
+			errors.put("username", "ç”¨æˆ·åä¸èƒ½ä¸ºç©º!");
 		} else {
 			if (!this.username.matches("[\u4e00-\u9fa5A-Za-z0-9]{3,8}")) {
 				isOK = false;
-				errors.put("username", "ÓÃ»§Ãû±ØĞëÊÇ3-8Î»×Ö·û!");
+				errors.put("username", "ç”¨æˆ·åä¸º3-8ä¸ªæ±‰å­—å­—æ¯æˆ–æ•°å­—!");
 			}
 		}
 
 		if (this.password == null || this.password.trim().equals("")) {
 			isOK = false;
-			errors.put("password", "ÃÜÂë²»ÄÜÎª¿Õ£¡");
+			errors.put("password", "å¯†ç ä¸èƒ½ä¸ºç©º");
 		} else {
 			if (!this.password.matches("[A-Za-z0-9]{3,8}")) {
 				isOK = false;
-				errors.put("password", "ÃÜÂë±ØĞëÊÇ3-8Î»Êı×Ö»ò×ÖÄ¸!");
+				errors.put("password", "å¯†ç ä¸º3-8å­—æ¯æˆ–æ•°å­—!");
 			}
 		}
 
 		if (this.password2 == null || this.password2.trim().equals("")) {
 			isOK = false;
-			errors.put("password2", "È·ÈÏÃÜÂë²»ÄÜÎª¿Õ£¡");
+			errors.put("password2", "è¯·è¾“å…¥ç¡®è®¤å¯†ç !");
 		} else {
 			if (!this.password.equals(this.password2)) {
 				isOK = false;
-				errors.put("password2", "Á½´ÎÃÜÂë±ØĞëÒ»ÖÂ!");
+				errors.put("password2", "ä¸¤æ¬¡å¯†ç è¾“å…¥ä¸ä¸€è‡´!");
 			}
 		}
 
-		if (this.checkcode == null || this.checkcode.trim().equals("")) {
-			isOK = false;
-			errors.put("checkcode", "ÑéÖ¤Âë²»ÄÜÎª¿Õ£¡");
-		} else {
-			if (!this.checkcode.equals(this.s_checkcode)) {
-				isOK = false;
-				errors.put("checkcode", "ÑéÖ¤Âë´íÎó£¡");
-			}
-		}
+//		if (this.checkcode == null || this.checkcode.trim().equals("")) {
+//			isOK = false;
+//			errors.put("checkcode", "éªŒè¯ç ä¸èƒ½ä¸ºç©º!");
+//		} else {
+//			if (!this.checkcode.equals(this.s_checkcode)) {
+//				isOK = false;
+//				errors.put("checkcode", "éªŒè¯ç ä¸æ­£ç¡®!");
+//			}
+//		}
 
 		return isOK;
 	}

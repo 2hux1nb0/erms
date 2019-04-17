@@ -4,7 +4,6 @@ import java.util.List;
 
 import cn.classroom.domain.User;
 
-//操作数据库user表的接口类
 public interface UserDao {
 
 	void addUser(User user);

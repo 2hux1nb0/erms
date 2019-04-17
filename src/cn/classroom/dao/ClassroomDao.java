@@ -4,7 +4,7 @@ import java.util.List;
 
 import cn.classroom.domain.Classroom;
 
-//?????????classroom????????
+//操作数据库classroom表的接口类
 public interface ClassroomDao {
 
 	void addClassroom(Classroom classroom);

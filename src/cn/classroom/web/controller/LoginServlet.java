@@ -12,7 +12,6 @@ import cn.classroom.service.impl.BusinessServiceImpl;
 import cn.classroom.utils.WebUtils;
 import cn.classroom.web.formbean.LoginForm;
 
-//用于处理登录请求的Servlet
 public class LoginServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,7 +33,6 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("id", user.getId());
 			request.setAttribute("username", user.getUsername());
 			request.getSession().setAttribute("user", user);
-			// 让用户登录成功后跳转到不同用户组相对应的主界面
 			if (type.equals("student")) {
 				request.getRequestDispatcher("/WEB-INF/jsp/student.jsp")
 						.forward(request, response);
@@ -42,10 +40,10 @@ public class LoginServlet extends HttpServlet {
 				request.getRequestDispatcher("/WEB-INF/jsp/teacher.jsp")
 						.forward(request, response);
 			} else if (type.equals("admin")) {
-				request.getRequestDispatcher("/WEB-INF/jsp/admin.jsp").forward(
-						request, response);
+				request.getRequestDispatcher("/WEB-INF/jsp/admin.jsp")
+				.forward(request, response);
 			} else {
-				request.setAttribute("message", "未知的用户类型！");
+				request.setAttribute("message", "璇锋纭�夋嫨鐢ㄦ埛绫诲瀷!");
 				request.getRequestDispatcher("/message.jsp").forward(request,
 						response);
 			}

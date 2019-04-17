@@ -45,22 +45,21 @@ public class LoginForm {
 	public boolean validate() {
 		UserDao dao = new UserDaoImpl();
 		boolean isOK = true;
-
 		if (this.username == null || this.username.trim().equals("")) {
 			isOK = false;
-			error = "ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡";
+			error = "ç”¨æˆ·åä¸èƒ½ä¸ºç©º!";
 		} else if (this.password == null || this.password.trim().equals("")) {
 			isOK = false;
-			error = " ÃÜÂë²»ÄÜÎª¿Õ£¡";
+			error = "å¯†ç ä¸èƒ½ä¸ºç©º!";
 		} else if (this.type == null) {
 			isOK = false;
-			error = "ÇëÑ¡ÔñÓÃ»§ÀàĞÍ£¡";
+			error = "è¯·é€‰æ‹©èº«ä»½!";
 		} else if (!dao.findUser(username, type)) {
 			isOK = false;
-			error = " ÓÃ»§Ãû²»´æÔÚ£¡";
+			error = "æœªæ‰¾åˆ°è¯¥ç”¨æˆ·!";
 		} else if ((dao.findUser(username, WebUtils.md5(password), type)) == null) {
 			isOK = false;
-			error = "  ÃÜÂë´íÎó£¡";
+			error = "å¯†ç ä¸æ­£ç¡®!";
 		}
 		return isOK;
 	}

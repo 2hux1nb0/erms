@@ -13,24 +13,20 @@ import cn.classroom.service.impl.BusinessServiceImpl;
 import cn.classroom.utils.WebUtils;
 import cn.classroom.web.formbean.RegisterForm;
 
-//´¦Àí×¢²áÇëÇó
 public class RegisterServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		//1.Ğ£ÑéÌá½»±íµ¥µÄ×Ö¶Î½øĞĞºÏ·¨ĞÔĞ£Ñé(°Ñ±íµ¥Êı¾İ·â×°µ½formbean)
 		RegisterForm form = WebUtils.request2Bean(request, RegisterForm.class);
 		Boolean b = form.validate();
 		
-		//2.Èç¹ûĞ£ÑéÊ§°Ü,Ìø»Øµ½±íµ¥Ò³Ãæ,»ØÏÔĞ£ÑéÊ§°ÜĞÅÏ¢
 		if(!b){
 			request.setAttribute("form", form);
 			request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
 			return;
 		}
 		
-		//3.Èç¹ûĞ£Ñé³É¹¦,Ôòµ÷ÓÃservice´¦Àí×¢²áÇëÇó
 		User user = new User();
 		WebUtils.copyBean(form, user);
 		user.setId(WebUtils.generateID());
@@ -38,19 +34,16 @@ public class RegisterServlet extends HttpServlet {
 		BusinessServiceImpl servicve = new BusinessServiceImpl();
 		try {
 			servicve.register(user);
-			//6.Èç¹ûservice´¦Àí³É¹¦,ÔòÌø×ªµ½ÍøÕ¾µÄÈ«¾ÖÏûÏ¢ÏÔÊ¾Ò³Ãæ,ÎªÓÃ»§ÏÔÊ¾×¢²á³É¹¦ÓÑºÃ´íÎóÏûÏ¢
-			request.setAttribute("message", "¹§Ï²Äú×¢²á³É¹¦£¡");
+			request.setAttribute("message", "æ³¨å†ŒæˆåŠŸ!");
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 			return;
 		} catch (UserExistException e) {
-			//4.Èç¹ûservice´¦Àí²»³É¹¦,²¢ÇÒ²»³É¹¦µÄÔ­ÒòÊÇÓÃ»§ÒÑ´æÔÚ,ÔòÌø»Øµ½×¢²áÒ³Ãæ,ÏÔÊ¾×¢²áÓÃ»§ÒÑ´æÔÚ
-			form.getErrors().put("username", "×¢²áµÄÓÃ»§ÃûÒÑ¾­´æÔÚ£¡");
+			form.getErrors().put("username", "ç”¨æˆ·åå·²å­˜åœ¨!");
 			request.setAttribute("form", form);
 			request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
 			return;
 		}catch(Exception e){
-			//5.Èç¹ûservice´¦Àí²»³É¹¦,²¢ÇÒ²»³É¹¦µÄÔ­ÒòÊÇÆäËûÎÊÌâµÄ»°,ÔòÌø×ªµ½ÍøÕ¾µÄÈ«¾ÖÏûÏ¢ÏÔÊ¾Ò³Ãæ,ÎªÓÃ»§ÏÔÊ¾ÓÑºÃ´íÎóÏûÏ¢
-			request.setAttribute("message", "·şÎñÆ÷³öÏÖ´íÎó£¡");
+			request.setAttribute("message", "æ³¨å†Œå¤±è´¥,è¯·ç¨åå†è¯•!");
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 			e.printStackTrace();
 			return;
