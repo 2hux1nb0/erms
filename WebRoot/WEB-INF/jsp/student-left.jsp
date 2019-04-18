@@ -28,7 +28,7 @@
 			</p>
 			<p>
 				<a class="a_demo_three forth_button"
-					href="${pageContext.request.contextPath }/servlet/MyActivityServlet?username=${username }"
+					href="${pageContext.request.contextPath }/servlet/MyCourseServlet?username=${username }"
 					target="main"> 查看课表 </a>
 			</p>
 		</div>
