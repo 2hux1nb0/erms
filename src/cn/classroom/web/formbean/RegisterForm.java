@@ -92,15 +92,15 @@ public class RegisterForm {
 			}
 		}
 
-//		if (this.checkcode == null || this.checkcode.trim().equals("")) {
-//			isOK = false;
-//			errors.put("checkcode", "验证码不能为空!");
-//		} else {
-//			if (!this.checkcode.equals(this.s_checkcode)) {
-//				isOK = false;
-//				errors.put("checkcode", "验证码不正确!");
-//			}
-//		}
+		if (this.checkcode == null || this.checkcode.trim().equals("")) {
+			isOK = false;
+			errors.put("checkcode", "验证码不能为空!");
+		} else {
+			if (!this.checkcode.equals(this.s_checkcode)) {
+				isOK = false;
+				errors.put("checkcode", "验证码不正确!");
+			}
+		}
 
 		return isOK;
 	}
