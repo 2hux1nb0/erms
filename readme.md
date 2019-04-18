@@ -21,6 +21,7 @@
         * end_section       int(1) not null
     * [5.活动表activity]
         * aid               varchar(40) not null,primary key
+        * username			varchar(40) not null
         * name              varchar(40) not null
         * room_no           varchar(4) not null
         * day               int(1) not null
