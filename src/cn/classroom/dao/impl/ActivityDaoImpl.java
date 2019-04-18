@@ -159,7 +159,7 @@ public class ActivityDaoImpl implements ActivityDao {
 		ResultSet rs = null;
 		try {
 			conn = JdbcUtils.getConnection();
-			String sql = "select a.*,b.username,b.type from activity as a join user as b  where username=? and a.username = b.username order by status,day,start_section;";
+			String sql = "select a.*,b.username,b.type from activity as a join user as b  where a.username=? and a.username = b.username order by status,day,start_section;";
 			st = conn.prepareStatement(sql);
 			st.setString(1, username);
 			rs = st.executeQuery();
@@ -192,7 +192,7 @@ public class ActivityDaoImpl implements ActivityDao {
 		ResultSet rs = null;
 		try {
 			conn = JdbcUtils.getConnection();
-			String sql = "select * activity where room_no=? and day=? and start_section<=? and end_section>=?;";
+			String sql = "select * from activity where room_no=? and day=? and start_section<=? and end_section>=?;";
 			st = conn.prepareStatement(sql);
 			st.setString(1, room_no);
 			st.setInt(2, day);
