@@ -6,6 +6,7 @@ public class Activity {
 	private String username;
 	private String name;
 	private String room_no;
+	private String type;
 	private int day;
 	private int start_section;
 	private int end_section;
@@ -75,4 +76,10 @@ public class Activity {
 		this.username = username;
 	}
 
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 }

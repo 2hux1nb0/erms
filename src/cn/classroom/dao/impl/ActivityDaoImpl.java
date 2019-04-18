@@ -95,7 +95,7 @@ public class ActivityDaoImpl implements ActivityDao {
 		ResultSet rs = null;
 		try {
 			conn = JdbcUtils.getConnection();
-			String sql = "select * from activity where aid=?;";
+			String sql = "select a.*,b.username,b.type from activity as a join user as b where aid=? and a.username = b.username;";
 			st = conn.prepareStatement(sql);
 			st.setString(1, aid);
 			rs = st.executeQuery();
@@ -109,6 +109,7 @@ public class ActivityDaoImpl implements ActivityDao {
 				activity.setStart_section(rs.getInt("start_section"));
 				activity.setEnd_section(rs.getInt("end_section"));
 				activity.setStatus(rs.getInt("status"));
+				activity.setType(rs.getString("type"));
 				return activity;
 			}
 		} catch (Exception e) {
@@ -125,7 +126,7 @@ public class ActivityDaoImpl implements ActivityDao {
 		ResultSet rs = null;
 		try {
 			conn = JdbcUtils.getConnection();
-			String sql = "select * from activity where room_no=? and status=? order by status,day,start_section;";
+			String sql = "select a.*,b.username,b.type from activity as a join user as b  where room_no=? and status=? and a.username = b.username order by status,day,start_section;";
 			st = conn.prepareStatement(sql);
 			st.setString(1, room_no);
 			st.setInt(2, 1);
@@ -141,6 +142,7 @@ public class ActivityDaoImpl implements ActivityDao {
 				activity.setStart_section(rs.getInt("start_section"));
 				activity.setEnd_section(rs.getInt("end_section"));
 				activity.setStatus(rs.getInt("status"));
+				activity.setType(rs.getString("type"));
 				list.add(activity);
 			}
 			return list;
@@ -157,7 +159,7 @@ public class ActivityDaoImpl implements ActivityDao {
 		ResultSet rs = null;
 		try {
 			conn = JdbcUtils.getConnection();
-			String sql = "select * from activity where username=? order by status,day,start_section;";
+			String sql = "select a.*,b.username,b.type from activity as a join user as b  where username=? and a.username = b.username order by status,day,start_section;";
 			st = conn.prepareStatement(sql);
 			st.setString(1, username);
 			rs = st.executeQuery();
@@ -172,6 +174,7 @@ public class ActivityDaoImpl implements ActivityDao {
 				activity.setStart_section(rs.getInt("start_section"));
 				activity.setEnd_section(rs.getInt("end_section"));
 				activity.setStatus(rs.getInt("status"));
+				activity.setType(rs.getString("type"));
 				list.add(activity);
 			}
 			return list;
@@ -189,7 +192,7 @@ public class ActivityDaoImpl implements ActivityDao {
 		ResultSet rs = null;
 		try {
 			conn = JdbcUtils.getConnection();
-			String sql = "select * from activity where room_no=? and day=? and start_section<=? and end_section>=?;";
+			String sql = "select * activity where room_no=? and day=? and start_section<=? and end_section>=?;";
 			st = conn.prepareStatement(sql);
 			st.setString(1, room_no);
 			st.setInt(2, day);
@@ -215,7 +218,7 @@ public class ActivityDaoImpl implements ActivityDao {
 		ResultSet rs = null;
 		try {
 			conn = JdbcUtils.getConnection();
-			String sql = "select * from activity;";
+			String sql = "select a.*,b.username,b.type from activity as a join user as b where a.username=b.username;";
 			st = conn.prepareStatement(sql);
 			rs = st.executeQuery();
 			List<Activity> list = new ArrayList<Activity>();
@@ -229,6 +232,7 @@ public class ActivityDaoImpl implements ActivityDao {
 				activity.setStart_section(rs.getInt("start_section"));
 				activity.setEnd_section(rs.getInt("end_section"));
 				activity.setStatus(rs.getInt("status"));
+				activity.setType(rs.getString("type"));
 				list.add(activity);
 			}
 			return list;

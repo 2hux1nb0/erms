@@ -45,6 +45,9 @@
 						<th width="112px">
 							申请者
 						</th>
+						<th width="112px">
+							申请者身份
+						</th>
 						<th width="113px">
 							活动名称
 						</th>
@@ -68,6 +71,14 @@
 							</td>
 							<td>
 								${a.username }
+							</td>
+							<td>
+								<c:if test="${a.type==\"teacher\"}">
+									教师
+								</c:if>
+								<c:if test="${a.type!=\"teacher\"}">
+									学生
+								</c:if>
 							</td>
 							<td>
 								${a.name }
