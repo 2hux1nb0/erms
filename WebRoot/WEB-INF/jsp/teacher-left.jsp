@@ -20,6 +20,9 @@
 			<p>
 				<a class="a_demo_three third_button" href="${pageContext.request.contextPath }/servlet/ClassroomManaServlet?username=${username }" target="main"> 查看教室 </a>
 			</p>
+			<p>
+				<a class="a_demo_three forth_button" href="${pageContext.request.contextPath }/servlet/AddCourseServlet?username=${username }" target="main"> 添加课程 </a>
+			</p>
 		</div>
 	</body>
 </html>
