@@ -4,7 +4,7 @@ import java.util.List;
 
 import cn.classroom.domain.CourseArrangement;
 
-//²Ù×÷Êı¾İ¿âarrangement±íµÄ½Ó¿ÚÀà
+//æ“ä½œæ•°æ®åº“arrangementè¡¨çš„æ¥å£ç±»
 public interface CourseArrangementDao {
 
 	void addArrange(CourseArrangement arrangement);

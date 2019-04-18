@@ -1,6 +1,6 @@
 package cn.classroom.domain;
 
-//封装活动的JavaBean
+//灏佽娲诲姩鐨凧avaBean
 public class Activity {
 	private String aid;
 	private String username;

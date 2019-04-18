@@ -23,7 +23,7 @@ public class CourseManaServlet extends HttpServlet {
 			.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "�鿴�γ�ʧ�ܣ�");
+			request.setAttribute("message", "查看课程失败！");
 			request.getRequestDispatcher("/message.jsp")
 			.forward(request, response);
 		}

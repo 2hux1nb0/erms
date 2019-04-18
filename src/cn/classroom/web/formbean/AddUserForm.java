@@ -50,39 +50,39 @@ public class AddUserForm {
 		this.type = type;
 	}
 
-	// ÓÃ»§Ãû²»ÄÜÎª¿Õ,²¢ÇÒÒªÎª3-8Î»Êı×Ö»ò×ÖÄ¸
-	// ÃÜÂë²»ÄÜÎª¿Õ,²¢ÇÒÒªÎª3-8Î»Êı×Ö»ò×ÖÄ¸
-	// È·ÈÏÃÜÂë²»ÄÜÎª¿Õ,²¢ÇÒÒªºÍÃÜÂëÒ»ÖÂ
+	// ç”¨æˆ·åä¸èƒ½ä¸ºç©º,å¹¶ä¸”è¦ä¸º3-8ä½æ•°å­—æˆ–å­—æ¯
+	// å¯†ç ä¸èƒ½ä¸ºç©º,å¹¶ä¸”è¦ä¸º3-8ä½æ•°å­—æˆ–å­—æ¯
+	// ç¡®è®¤å¯†ç ä¸èƒ½ä¸ºç©º,å¹¶ä¸”è¦å’Œå¯†ç ä¸€è‡´
 	public boolean validate() {
 		boolean isOK = true;
 
 		if (this.username == null || this.username.trim().equals("")) {
 			isOK = false;
-			errors.put("username", "ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡");
+			errors.put("username", "ç”¨æˆ·åä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.username.matches("[\u4e00-\u9fa5A-Za-z0-9]{3,8}")) {
 				isOK = false;
-				errors.put("username", "ÓÃ»§Ãû±ØĞëÊÇ3-8Î»×Ö·û!");
+				errors.put("username", "ç”¨æˆ·åå¿…é¡»æ˜¯3-8ä½å­—ç¬¦!");
 			}
 		}
 
 		if (this.password == null || this.password.trim().equals("")) {
 			isOK = false;
-			errors.put("password", "ÃÜÂë²»ÄÜÎª¿Õ£¡");
+			errors.put("password", "å¯†ç ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.password.matches("[A-Za-z0-9]{3,8}")) {
 				isOK = false;
-				errors.put("password", "ÃÜÂë±ØĞëÊÇ3-8Î»Êı×Ö»ò×ÖÄ¸!");
+				errors.put("password", "å¯†ç å¿…é¡»æ˜¯3-8ä½æ•°å­—æˆ–å­—æ¯!");
 			}
 		}
 
 		if (this.password2 == null || this.password2.trim().equals("")) {
 			isOK = false;
-			errors.put("password2", "È·ÈÏÃÜÂë²»ÄÜÎª¿Õ£¡");
+			errors.put("password2", "ç¡®è®¤å¯†ç ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.password.equals(this.password2)) {
 				isOK = false;
-				errors.put("password2", "Á½´ÎÃÜÂë±ØĞëÒ»ÖÂ!");
+				errors.put("password2", "ä¸¤æ¬¡å¯†ç å¿…é¡»ä¸€è‡´!");
 			}
 		}
 

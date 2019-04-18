@@ -1,6 +1,6 @@
 package cn.classroom.domain;
 
-//封装课程安排的JavaBean
+//灏佽璇剧▼瀹夋帓鐨凧avaBean
 public class CourseArrangement {
 	private String id;
 	private String name;

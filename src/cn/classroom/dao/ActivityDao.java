@@ -4,7 +4,7 @@ import java.util.List;
 
 import cn.classroom.domain.Activity;
 
-//²Ù×÷Êı¾İ¿âactivity±íµÄ½Ó¿ÚÀà
+//æ“ä½œæ•°æ®åº“activityè¡¨çš„æ¥å£ç±»
 public interface ActivityDao {
 
 	void addActivity(Activity activity);

@@ -22,10 +22,10 @@ public class ChangeStatusServlet extends HttpServlet {
 		try {
 			ActivityDao dao = new ActivityDaoImpl();
 			if (status.equals("1")) {
-				request.setAttribute("alert", "ÒÑÈ¡ÏûÅú×¼£¡");
+				request.setAttribute("alert", "å·²å–æ¶ˆæ‰¹å‡†ï¼");
 				dao.updateActivity(aid, 0);
 			} else if (status.equals("0")) {
-				request.setAttribute("alert", "»î¶¯ÒÑÅú×¼£¡");
+				request.setAttribute("alert", "æ´»åŠ¨å·²æ‰¹å‡†ï¼");
 				dao.updateActivity(aid, 1);
 			}
 			BusinessService service = new BusinessServiceImpl();
@@ -35,7 +35,7 @@ public class ChangeStatusServlet extends HttpServlet {
 					.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "²é¿´»î¶¯ÉêÇëÊ§°Ü£¡");
+			request.setAttribute("message", "æŸ¥çœ‹æ´»åŠ¨ç”³è¯·å¤±è´¥ï¼");
 			request.getRequestDispatcher("/message.jsp").forward(request,
 					response);
 		}

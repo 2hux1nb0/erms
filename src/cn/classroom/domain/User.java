@@ -1,6 +1,6 @@
 package cn.classroom.domain;
 
-//封装用户的JavaBean
+//灏佽鐢ㄦ埛鐨凧avaBean
 public class User {
 	private String id;
 	private String username;

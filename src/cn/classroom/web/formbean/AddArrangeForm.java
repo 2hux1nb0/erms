@@ -72,16 +72,16 @@ public class AddArrangeForm {
 		boolean isOK = true;
 		if (this.room_no == null || this.room_no.trim().equals("")) {
 			isOK = false;
-			errors.put("room_no", "½ÌÊÒºÅ²»ÄÜÎª¿Õ£¡");
+			errors.put("room_no", "æ•™å®¤å·ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.room_no.matches("[A-Za-z0-9]{1,4}")) {
 				isOK = false;
-				errors.put("room_no", "½ÌÊÒºÅÌ«³¤£¡");
+				errors.put("room_no", "æ•™å®¤å·å¤ªé•¿ï¼");
 			} else {
 				ClassroomDao dao = new ClassroomDaoImpl();
 				if (!dao.findClassroom(this.room_no)) {
 					isOK = false;
-					errors.put("room_no", "¸Ã½ÌÊÒ²»´æÔÚ£¬ÇëÏÈÍêÉÆ½ÌÊÒĞÅÏ¢£¡");
+					errors.put("room_no", "è¯¥æ•™å®¤ä¸å­˜åœ¨ï¼Œè¯·å…ˆå®Œå–„æ•™å®¤ä¿¡æ¯ï¼");
 				} else {
 					CourseArrangementDao dao1 = new CourseArrangementDaoImpl();
 					ActivityDao dao2 = new ActivityDaoImpl();
@@ -90,7 +90,7 @@ public class AddArrangeForm {
 							|| dao2.checkTime(room_no, day, start_section,
 									end_section)) {
 						isOK = false;
-						errors.put("day", "¸ÃÊ±¼ä¶ÎÒÑÓĞ°²ÅÅ£¡");
+						errors.put("day", "è¯¥æ—¶é—´æ®µå·²æœ‰å®‰æ’ï¼");
 					}
 				}
 			}
@@ -98,18 +98,18 @@ public class AddArrangeForm {
 
 		if (this.name == null || this.name.trim().equals("")) {
 			isOK = false;
-			errors.put("name", "¿Î³ÌÃû²»ÄÜÎª¿Õ£¡");
+			errors.put("name", "è¯¾ç¨‹åä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			CourseDao dao = new CourseDaoImpl();
 			if (!dao.findCourseByName(name)) {
 				isOK = false;
-				errors.put("name", "¸Ã¿Î³ÌÃû²»´æÔÚ£¬ÇëÏÈÍêÉÆ½ÌÊÒĞÅÏ¢£¡£¡");
+				errors.put("name", "è¯¥è¯¾ç¨‹åä¸å­˜åœ¨ï¼Œè¯·å…ˆå®Œå–„æ•™å®¤ä¿¡æ¯ï¼ï¼");
 			}
 		}
 
 		if (this.start_section > this.end_section) {
 			isOK = false;
-			errors.put("day", "ÉÏ¿ÎÊ±¼ä´íÎó£¬¿ªÊ¼Ê±¼äÓ¦ÔçÓÚ½áÊøÊ±¼ä£¡");
+			errors.put("day", "ä¸Šè¯¾æ—¶é—´é”™è¯¯ï¼Œå¼€å§‹æ—¶é—´åº”æ—©äºç»“æŸæ—¶é—´ï¼");
 		}
 		return isOK;
 	}

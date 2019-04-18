@@ -21,7 +21,7 @@ public class DelArrangeServlet extends HttpServlet {
 			String id = request.getParameter("id");
 			CourseArrangementDao dao = new CourseArrangementDaoImpl();
 			dao.deleteArrange(id);
-			request.setAttribute("alert", "É¾³ı³É¹¦£¡");
+			request.setAttribute("alert", "åˆ é™¤æˆåŠŸï¼");
 			String select = request.getParameter("select");
 			if (select.equals("room_no")) {
 				String room_no = request.getParameter("room_no");
@@ -44,7 +44,7 @@ public class DelArrangeServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "É¾³ıÊ§°Ü!");
+			request.setAttribute("message", "åˆ é™¤å¤±è´¥!");
 		}
 	}
 

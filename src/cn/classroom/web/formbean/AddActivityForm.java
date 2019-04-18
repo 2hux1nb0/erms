@@ -72,16 +72,16 @@ public class AddActivityForm {
 		boolean isOK = true;
 		if (this.room_no == null || this.room_no.trim().equals("")) {
 			isOK = false;
-			errors.put("room_no", "½ÌÊÒºÅ²»ÄÜÎª¿Õ£¡");
+			errors.put("room_no", "æ•™å®¤å·ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.room_no.matches("[A-Za-z0-9]{1,4}")) {
 				isOK = false;
-				errors.put("room_no", "½ÌÊÒºÅÌ«³¤£¡");
+				errors.put("room_no", "æ•™å®¤å·å¤ªé•¿ï¼");
 			} else {
 				ClassroomDao dao = new ClassroomDaoImpl();
 				if (!dao.findClassroom(this.room_no)) {
 					isOK = false;
-					errors.put("room_no", "¸Ã½ÌÊÒ²»´æÔÚ£¡");
+					errors.put("room_no", "è¯¥æ•™å®¤ä¸å­˜åœ¨ï¼");
 				} else {
 					CourseArrangementDao dao1 = new CourseArrangementDaoImpl();
 					ActivityDao dao2 = new ActivityDaoImpl();
@@ -90,7 +90,7 @@ public class AddActivityForm {
 							|| dao2.checkTime(room_no, day, start_section,
 									end_section)) {
 						isOK = false;
-						errors.put("day", "¸ÃÊ±¼ä¶ÎÒÑÓĞ°²ÅÅ£¡");
+						errors.put("day", "è¯¥æ—¶é—´æ®µå·²æœ‰å®‰æ’ï¼");
 					}
 				}
 			}
@@ -98,17 +98,17 @@ public class AddActivityForm {
 
 		if (this.name == null || this.name.trim().equals("")) {
 			isOK = false;
-			errors.put("name", "»î¶¯Ãû³Æ²»ÄÜÎª¿Õ£¡");
+			errors.put("name", "æ´»åŠ¨åç§°ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!name.matches("^.{1,40}$")) {
 				isOK = false;
-				errors.put("name", "»î¶¯Ãû³ÆÌ«³¤£¡");
+				errors.put("name", "æ´»åŠ¨åç§°å¤ªé•¿ï¼");
 			}
 		}
 
 		if (this.start_section > this.end_section) {
 			isOK = false;
-			errors.put("day", "Ê±¼ä´íÎó£¬¿ªÊ¼Ê±¼äÓ¦ÔçÓÚ½áÊøÊ±¼ä£¡");
+			errors.put("day", "æ—¶é—´é”™è¯¯ï¼Œå¼€å§‹æ—¶é—´åº”æ—©äºç»“æŸæ—¶é—´ï¼");
 		}
 		return isOK;
 	}

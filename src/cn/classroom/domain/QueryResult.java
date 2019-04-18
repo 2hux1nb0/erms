@@ -2,7 +2,7 @@ package cn.classroom.domain;
 
 import java.util.List;
 
-//封装查询结果的JavaBean
+//灏佽鏌ヨ缁撴灉鐨凧avaBean
 public class QueryResult {
 	private List list;
 

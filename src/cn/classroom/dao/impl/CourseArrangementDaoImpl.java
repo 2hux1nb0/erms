@@ -12,7 +12,7 @@ import cn.classroom.domain.CourseArrangement;
 import cn.classroom.exception.DaoException;
 import cn.classroom.utils.JdbcUtils;
 
-//CourseArrangementDao的实现类
+//CourseArrangementDao鐨勫疄鐜扮被
 public class CourseArrangementDaoImpl implements CourseArrangementDao {
 	public void addArrange(CourseArrangement arrangement) {
 		Connection conn = null;

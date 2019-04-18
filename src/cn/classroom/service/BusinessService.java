@@ -4,13 +4,13 @@ import cn.classroom.domain.QueryResult;
 import cn.classroom.domain.User;
 import cn.classroom.exception.UserExistException;
 
-//ÒµÎñÀàµÄ½Ó¿Ú
+//ä¸šåŠ¡ç±»çš„æ¥å£
 public interface BusinessService {
 
-	// ¶Ôweb²ãÌá¹©×¢²á·şÎñ
+	// å¯¹webå±‚æä¾›æ³¨å†ŒæœåŠ¡
 	void register(User user) throws UserExistException;
 
-	// ¶Ôweb²ãÌá¹©µÇÂ¼·şÎñ
+	// å¯¹webå±‚æä¾›ç™»å½•æœåŠ¡
 	User login(String username, String password, String type);
 
 	QueryResult queryUser();

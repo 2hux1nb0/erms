@@ -4,7 +4,7 @@ import java.util.List;
 
 import cn.classroom.domain.Classroom;
 
-//²Ù×÷Êı¾İ¿âclassroom±íµÄ½Ó¿ÚÀà
+//æ“ä½œæ•°æ®åº“classroomè¡¨çš„æ¥å£ç±»
 public interface ClassroomDao {
 
 	void addClassroom(Classroom classroom);

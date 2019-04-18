@@ -1,6 +1,6 @@
 package cn.classroom.domain;
 
-//��װ�γ̵�JavaBean
+//封装课程的JavaBean
 public class Course {
 	private String course_id;
 	private String name;

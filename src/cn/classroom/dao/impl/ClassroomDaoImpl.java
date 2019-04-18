@@ -11,7 +11,7 @@ import cn.classroom.domain.Classroom;
 import cn.classroom.exception.DaoException;
 import cn.classroom.utils.JdbcUtils;
 
-//ClassroomDao的实现类
+//ClassroomDao鐨勫疄鐜扮被
 public class ClassroomDaoImpl implements ClassroomDao {
 	public void addClassroom(Classroom classroom) {
 		Connection conn = null;

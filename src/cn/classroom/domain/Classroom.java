@@ -1,6 +1,6 @@
 package cn.classroom.domain;
 
-//·â×°½ÌÊÒµÄJavaBean
+//å°è£…æ•™å®¤çš„JavaBean
 public class Classroom {
 	private String room_no;
 	private String location;

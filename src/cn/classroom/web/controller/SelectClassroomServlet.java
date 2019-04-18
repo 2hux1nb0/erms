@@ -34,7 +34,7 @@ public class SelectClassroomServlet extends HttpServlet {
 					.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "�鿴�û�ʧ�ܣ�");
+			request.setAttribute("message", "查看用户失败！");
 			request.getRequestDispatcher("/message.jsp").forward(request,
 					response);
 		}

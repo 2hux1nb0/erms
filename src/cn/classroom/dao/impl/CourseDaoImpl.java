@@ -11,7 +11,7 @@ import cn.classroom.domain.Course;
 import cn.classroom.exception.DaoException;
 import cn.classroom.utils.JdbcUtils;
 
-//CourseDao的实现类
+//CourseDao鐨勫疄鐜扮被
 public class CourseDaoImpl implements CourseDao {
 	public void addCourse(Course course) {
 		Connection conn = null;

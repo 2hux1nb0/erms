@@ -51,44 +51,44 @@ public class UpdateCourseForm {
 
 		if (this.course_id == null || this.course_id.trim().equals("")) {
 			isOK = false;
-			errors.put("course_id", "¿Î³ÌºÅ²»ÄÜÎª¿Õ£¡");
+			errors.put("course_id", "è¯¾ç¨‹å·ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.course_id.matches("[A-Za-z0-9]{1,4}")) {
 				isOK = false;
-				errors.put("course_id", "¿Î³ÌºÅÌ«³¤£¡");
+				errors.put("course_id", "è¯¾ç¨‹å·å¤ªé•¿ï¼");
 			} else {
 				CourseDao dao = new CourseDaoImpl();
 				if (!dao.findCourse(course_id)) {
 					isOK = false;
-					errors.put("course_id", "¸Ã¿Î³Ì²»´æÔÚ£¬ÇëÏÈÍêÉÆ¿Î³ÌĞÅÏ¢£¡");
+					errors.put("course_id", "è¯¥è¯¾ç¨‹ä¸å­˜åœ¨ï¼Œè¯·å…ˆå®Œå–„è¯¾ç¨‹ä¿¡æ¯ï¼");
 				}
 			}
 		}
 
 		if (this.name == null || this.name.trim().equals("")) {
 			isOK = false;
-			errors.put("name", "¿Î³ÌÃû²»ÄÜÎª¿Õ£¡");
+			errors.put("name", "è¯¾ç¨‹åä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			String s = this.name.replace(" ", "");
 			if (!s.matches("^.{1,20}$")) {
 				isOK = false;
-				errors.put("name", "¿Î³ÌÃûÌ«³¤£¡");
+				errors.put("name", "è¯¾ç¨‹åå¤ªé•¿ï¼");
 			}
 		}
 
 		if (this.teacher == null || this.teacher.trim().equals("")) {
 			isOK = false;
-			errors.put("teacher", "´ú¿Î½ÌÊ¦²»ÄÜÎª¿Õ£¡");
+			errors.put("teacher", "ä»£è¯¾æ•™å¸ˆä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			String s = this.teacher.replace(" ", "");
 			if (!s.matches("^.{1,20}$")) {
 				isOK = false;
-				errors.put("teacher", "Êı¾İÌ«³¤£¡");
+				errors.put("teacher", "æ•°æ®å¤ªé•¿ï¼");
 			} else {
 				UserDao dao = new UserDaoImpl();
 				if (!dao.findUser(this.teacher, "teacher")) {
 					isOK = false;
-					errors.put("teacher", "¸Ã½ÌÊ¦²»´æÔÚ£¡");
+					errors.put("teacher", "è¯¥æ•™å¸ˆä¸å­˜åœ¨ï¼");
 				}
 			}
 		}

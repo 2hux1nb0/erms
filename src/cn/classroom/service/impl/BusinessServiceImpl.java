@@ -17,31 +17,31 @@ import cn.classroom.factory.DaoFactory;
 import cn.classroom.service.BusinessService;
 import cn.classroom.utils.WebUtils;
 
-//¶Ôweb²ãÌá¹©ËùÓĞµÄÒµÎñ·şÎñ
+//å¯¹webå±‚æä¾›æ‰€æœ‰çš„ä¸šåŠ¡æœåŠ¡
 public class BusinessServiceImpl implements BusinessService {
 
-	//¹¤³§Ä£Ê½ spring
+	//å·¥å‚æ¨¡å¼ spring
 	private UserDao dao = DaoFactory.getInstance().createDao(UserDao.class);
 
-	// ¶Ôweb²ãÌá¹©×¢²á·şÎñ
+	// å¯¹webå±‚æä¾›æ³¨å†ŒæœåŠ¡
 	public void register(User user) throws UserExistException {
-		// ÏÈÅĞ¶Ïµ±Ç°Òª×¢²áµÄÓÃ»§ÊÇ·ñ´æÔÚ
+		// å…ˆåˆ¤æ–­å½“å‰è¦æ³¨å†Œçš„ç”¨æˆ·æ˜¯å¦å­˜åœ¨
 		Boolean b = dao.findUser(user.getUsername());
 		if (b) {
-			throw new UserExistException(); // ·¢ÏÖÒª×¢²áµÄÓÃ»§ÒÑ´æÔÚ,Ôò¸øweb²ãÅ×Ò»¸ö±àÒëÊ±Òì³£,ÌáĞÑweb²ã´¦ÀíÕâ¸öÒì³£,¸øÓÃ»§Ò»¸öÓÑºÃÌáÊ¾
+			throw new UserExistException(); // å‘ç°è¦æ³¨å†Œçš„ç”¨æˆ·å·²å­˜åœ¨,åˆ™ç»™webå±‚æŠ›ä¸€ä¸ªç¼–è¯‘æ—¶å¼‚å¸¸,æé†’webå±‚å¤„ç†è¿™ä¸ªå¼‚å¸¸,ç»™ç”¨æˆ·ä¸€ä¸ªå‹å¥½æç¤º
 		} else {
 			user.setPassword(WebUtils.md5(user.getPassword()));
 			dao.addUser(user);
 		}
 	}
 
-	// ¶Ôweb²ãÌá¹©µÇÂ¼·şÎñ
+	// å¯¹webå±‚æä¾›ç™»å½•æœåŠ¡
 	public User login(String username, String password, String type) {
 		password = WebUtils.md5(password);
 		return dao.findUser(username, password, type);
 	}
 
-	// ²éÑ¯ËùÓĞÓÃ»§ĞÅÏ¢
+	// æŸ¥è¯¢æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯
 	public QueryResult queryUser() {
 		QueryResult qr = new QueryResult();
 		UserDao dao = new UserDaoImpl();
@@ -50,7 +50,7 @@ public class BusinessServiceImpl implements BusinessService {
 		return qr;
 	}
 
-	// ²éÑ¯ËùÓĞ½ÌÊÒĞÅÏ¢
+	// æŸ¥è¯¢æ‰€æœ‰æ•™å®¤ä¿¡æ¯
 	public QueryResult queryClassroom() {
 		QueryResult qr = new QueryResult();
 		ClassroomDao dao = new ClassroomDaoImpl();
@@ -59,7 +59,7 @@ public class BusinessServiceImpl implements BusinessService {
 		return qr;
 	}
 
-	// ²éÑ¯ËùÓĞ¿Î³ÌĞÅÏ¢
+	// æŸ¥è¯¢æ‰€æœ‰è¯¾ç¨‹ä¿¡æ¯
 	public QueryResult queryCourse() {
 		QueryResult qr = new QueryResult();
 		CourseDao dao = new CourseDaoImpl();
@@ -68,7 +68,7 @@ public class BusinessServiceImpl implements BusinessService {
 		return qr;
 	}
 
-	// ²éÑ¯ËùÓĞ»î¶¯ÉêÇëĞÅÏ¢
+	// æŸ¥è¯¢æ‰€æœ‰æ´»åŠ¨ç”³è¯·ä¿¡æ¯
 	public QueryResult queryActivity() {
 		QueryResult qr = new QueryResult();
 		ActivityDao dao = new ActivityDaoImpl();

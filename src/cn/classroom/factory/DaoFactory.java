@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-//¹¤³§Àà,¸ù¾İdao.propertiesÁ¬½ÓÏàÓ¦Êı¾İ¿â,ÔöÇ¿¿ÉÒÆÖ²ĞÔ
+//å·¥å‚ç±»,æ ¹æ®dao.propertiesè¿æ¥ç›¸åº”æ•°æ®åº“,å¢å¼ºå¯ç§»æ¤æ€§
 public class DaoFactory {
 	private Properties daoConfig = new Properties();
 	

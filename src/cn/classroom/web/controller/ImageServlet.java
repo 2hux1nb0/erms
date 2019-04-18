@@ -25,24 +25,24 @@ public class ImageServlet extends HttpServlet {
 				BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
 
-		// 1.ÉèÖÃ±³¾°É«
+		// 1.è®¾ç½®èƒŒæ™¯è‰²
 		setBackGround(g);
 
-		// 2.ÉèÖÃ±ß¿ò
+		// 2.è®¾ç½®è¾¹æ¡†
 		setBorder(g);
 
-		// 3.»­¸ÉÈÅÏß
+		// 3.ç”»å¹²æ‰°çº¿
 		drawRandomLine(g);
 
-		// 4.ÏòÍ¼ĞÎÉÏĞ´Ëæ»úÊı
+		// 4.å‘å›¾å½¢ä¸Šå†™éšæœºæ•°
 		String random = drawRandomNum((Graphics2D) g);
 		request.setCharacterEncoding("UTF-8");
 		request.getSession().setAttribute("checkcode", random);
 
-		// 5.Í¼ĞÎĞ´¸øä¯ÀÀÆ÷
+		// 5.å›¾å½¢å†™ç»™æµè§ˆå™¨
 		response.setContentType("image/jpeg");
 		ImageIO.write(image, "jpg", response.getOutputStream());
-		// ·¢Í·¿ØÖÆä¯ÀÀÆ÷²»Òª»º´æ
+		// å‘å¤´æ§åˆ¶æµè§ˆå™¨ä¸è¦ç¼“å­˜
 		response.setDateHeader("expries", -1);
 		response.setHeader("Cache-Control", "no-cache");
 		response.setHeader("Pragma", "no-cache");
@@ -73,7 +73,7 @@ public class ImageServlet extends HttpServlet {
 
 	private String drawRandomNum(Graphics2D g) {
 		g.setColor(Color.RED);
-		g.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+		g.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
 
 		// [u4100-\u9fa5]
 		String base = "\u7684\u4e00\u4e86\u662f\u6211\u4e0d\u5728\u4eba\u4eec\u6709\u6765\u4ed6\u8fd9\u4e0a\u7740\u4e2a\u5730\u5230\u5927\u91cc\u8bf4\u5c31\u53bb"
@@ -104,7 +104,7 @@ public class ImageServlet extends HttpServlet {
 			int degree = new Random().nextInt() % 30;
 			String ch = base.charAt(new Random().nextInt(base.length())) + "";
 			sb.append(ch);
-			g.rotate(degree * Math.PI / 180, x, 25);// ÉèÖÃĞı×ª½Ç¶È
+			g.rotate(degree * Math.PI / 180, x, 25);// è®¾ç½®æ—‹è½¬è§’åº¦
 			g.drawString(ch, x, 25);
 			g.rotate(-degree * Math.PI / 180, x, 25);
 			x += 30;

@@ -33,7 +33,7 @@ public class MyCourseServlet extends HttpServlet {
 					.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "�鿴ʧ�ܣ�");
+			request.setAttribute("message", "查看失败！");
 			request.getRequestDispatcher("/message.jsp").forward(request,
 					response);
 		}

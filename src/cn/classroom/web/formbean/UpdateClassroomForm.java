@@ -40,28 +40,28 @@ public class UpdateClassroomForm {
 
 		if (this.room_no == null || this.room_no.trim().equals("")) {
 			isOK = false;
-			errors.put("room_no", "½ÌÊÒºÅ²»ÄÜÎª¿Õ£¡");
+			errors.put("room_no", "æ•™å®¤å·ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.room_no.matches("[A-Za-z0-9]{1,4}")) {
 				isOK = false;
-				errors.put("room_no", "½ÌÊÒºÅÌ«³¤£¡");
+				errors.put("room_no", "æ•™å®¤å·å¤ªé•¿ï¼");
 			} else {
 				ClassroomDao dao = new ClassroomDaoImpl();
 				if(!dao.findClassroom(room_no)){
 					isOK = false;
-					errors.put("room_no", "¸Ã½ÌÊÒ²»´æÔÚ£¬ÇëÏÈÍêÉÆ½ÌÊÒĞÅÏ¢£¡");
+					errors.put("room_no", "è¯¥æ•™å®¤ä¸å­˜åœ¨ï¼Œè¯·å…ˆå®Œå–„æ•™å®¤ä¿¡æ¯ï¼");
 				}
 			}
 		}
 
 		if (this.location == null || this.location.trim().equals("")) {
 			isOK = false;
-			errors.put("location", "½ÌÊÒÎ»ÖÃ²»ÄÜÎª¿Õ£¡");
+			errors.put("location", "æ•™å®¤ä½ç½®ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			String s = this.location.replace(" ", "");
 			if (!s.matches("^.{1,40}$")) {
 				isOK = false;
-				errors.put("location", "Êı¾İÌ«³¤£¡");
+				errors.put("location", "æ•°æ®å¤ªé•¿ï¼");
 			}
 		}
 

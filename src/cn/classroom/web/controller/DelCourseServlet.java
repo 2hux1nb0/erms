@@ -30,7 +30,7 @@ public class DelCourseServlet extends HttpServlet {
 			dao.deleteCourse(course_id);
 			CourseArrangementDao dao2 = new CourseArrangementDaoImpl();
 			dao2.deleteArrangeByCourse(name);
-			request.setAttribute("alert", "É¾³ı³É¹¦£¡");
+			request.setAttribute("alert", "åˆ é™¤æˆåŠŸï¼");
 			BusinessService service = new BusinessServiceImpl();
 			QueryResult qr = service.queryCourse();
 			request.setAttribute("queryresult", qr);
@@ -40,7 +40,7 @@ public class DelCourseServlet extends HttpServlet {
 							request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "É¾³ıÊ§°Ü!");
+			request.setAttribute("message", "åˆ é™¤å¤±è´¥!");
 		}
 	}
 

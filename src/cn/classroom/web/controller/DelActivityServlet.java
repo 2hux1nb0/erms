@@ -26,7 +26,7 @@ public class DelActivityServlet extends HttpServlet {
 			String username = request.getParameter("username");
 			ActivityDao dao = new ActivityDaoImpl();
 			dao.deleteActivity(aid);
-			request.setAttribute("alert", "É¾³ı³É¹¦£¡");
+			request.setAttribute("alert", "åˆ é™¤æˆåŠŸï¼");
 			if (room_no != null) {
 				request.setAttribute("room_no", room_no);
 				CourseArrangementDao dao2 = new CourseArrangementDaoImpl();
@@ -56,7 +56,7 @@ public class DelActivityServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "É¾³ıÊ§°Ü!");
+			request.setAttribute("message", "åˆ é™¤å¤±è´¥!");
 		}
 	}
 

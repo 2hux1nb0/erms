@@ -22,12 +22,12 @@ public class UpdateCourseServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		// 1.Ğ£ÑéÌá½»±íµ¥µÄ×Ö¶Î½øĞĞºÏ·¨ĞÔĞ£Ñé(°Ñ±íµ¥Êı¾İ·â×°µ½formbean)
+		// 1.æ ¡éªŒæäº¤è¡¨å•çš„å­—æ®µè¿›è¡Œåˆæ³•æ€§æ ¡éªŒ(æŠŠè¡¨å•æ•°æ®å°è£…åˆ°formbean)
 		UpdateCourseForm form = WebUtils.request2Bean(request,
 				UpdateCourseForm.class);
 		Boolean b = form.validate();
 
-		// 2.Èç¹ûĞ£ÑéÊ§°Ü,Ìø»Øµ½±íµ¥Ò³Ãæ,»ØÏÔĞ£ÑéÊ§°ÜĞÅÏ¢
+		// 2.å¦‚æœæ ¡éªŒå¤±è´¥,è·³å›åˆ°è¡¨å•é¡µé¢,å›æ˜¾æ ¡éªŒå¤±è´¥ä¿¡æ¯
 		if (!b) {
 			request.setAttribute("form", form);
 			request.setAttribute("course_id", form.getCourse_id());
@@ -37,23 +37,23 @@ public class UpdateCourseServlet extends HttpServlet {
 			return;
 		}
 
-		// 3.Èç¹ûĞ£Ñé³É¹¦,Ôòµ÷ÓÃservice´¦Àí×¢²áÇëÇó
+		// 3.å¦‚æœæ ¡éªŒæˆåŠŸ,åˆ™è°ƒç”¨serviceå¤„ç†æ³¨å†Œè¯·æ±‚
 		Course c = new Course();
 		WebUtils.copyBean(form, c);
 		CourseDao dao = new CourseDaoImpl();
 		try {
 			dao.updateCourse(c);
-			// 6.Èç¹ûservice´¦Àí³É¹¦,Ìø»ØÓÃ»§¹ÜÀí½çÃæ
+			// 6.å¦‚æœserviceå¤„ç†æˆåŠŸ,è·³å›ç”¨æˆ·ç®¡ç†ç•Œé¢
 			BusinessService service = new BusinessServiceImpl();
 			QueryResult qr = service.queryCourse();
 			request.setAttribute("queryresult", qr);
-			request.setAttribute("alert", "Ìí¼Ó¿Î³Ì³É¹¦£¡");
+			request.setAttribute("alert", "æ·»åŠ è¯¾ç¨‹æˆåŠŸï¼");
 			request.getRequestDispatcher("/WEB-INF/jsp/course-mana-main.jsp")
 					.forward(request, response);
 			return;
 		} catch (Exception e) {
-			// 5.Èç¹ûservice´¦Àí²»³É¹¦,²¢ÇÒ²»³É¹¦µÄÔ­ÒòÊÇÆäËûÎÊÌâµÄ»°,ÔòÌø×ªµ½ÍøÕ¾µÄÈ«¾ÖÏûÏ¢ÏÔÊ¾Ò³Ãæ,ÎªÓÃ»§ÏÔÊ¾ÓÑºÃ´íÎóÏûÏ¢
-			request.setAttribute("message", "·şÎñÆ÷³öÏÖ´íÎó£¡");
+			// 5.å¦‚æœserviceå¤„ç†ä¸æˆåŠŸ,å¹¶ä¸”ä¸æˆåŠŸçš„åŸå› æ˜¯å…¶ä»–é—®é¢˜çš„è¯,åˆ™è·³è½¬åˆ°ç½‘ç«™çš„å…¨å±€æ¶ˆæ¯æ˜¾ç¤ºé¡µé¢,ä¸ºç”¨æˆ·æ˜¾ç¤ºå‹å¥½é”™è¯¯æ¶ˆæ¯
+			request.setAttribute("message", "æœåŠ¡å™¨å‡ºç°é”™è¯¯ï¼");
 			request.getRequestDispatcher("/message.jsp").forward(request,
 					response);
 			e.printStackTrace();

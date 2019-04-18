@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-//�������ݿ�Ĺ�����
+//数据库工具
 public class JdbcUtils {
 	private static Properties config = new Properties();
 

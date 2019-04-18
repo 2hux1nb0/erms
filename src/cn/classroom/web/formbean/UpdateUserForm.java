@@ -61,33 +61,33 @@ public class UpdateUserForm {
 
 		if (this.oldpassword == null || this.oldpassword.trim().equals("")) {
 			isOK = false;
-			errors.put("oldpassword", "¾ÉÃÜÂë²»ÄÜÎª¿Õ£¡");
+			errors.put("oldpassword", "æ—§å¯†ç ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			UserDao dao = new UserDaoImpl();
 			String np = WebUtils.md5(this.oldpassword);
 			if (dao.findUser(username, np, type) == null) {
 				isOK = false;
-				errors.put("oldpassword", "ÃÜÂë´íÎó£¡");
+				errors.put("oldpassword", "å¯†ç é”™è¯¯ï¼");
 			}
 		}
 
 		if (this.password == null || this.password.trim().equals("")) {
 			isOK = false;
-			errors.put("password", "È·ÈÏÃÜÂë²»ÄÜÎª¿Õ£¡");
+			errors.put("password", "ç¡®è®¤å¯†ç ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.password.matches("[A-Za-z0-9]{3,8}")) {
 				isOK = false;
-				errors.put("password", "ÃÜÂë±ØĞëÊÇ3-8Î»Êı×Ö»ò×ÖÄ¸!");
+				errors.put("password", "å¯†ç å¿…é¡»æ˜¯3-8ä½æ•°å­—æˆ–å­—æ¯!");
 			}
 		}
 
 		if (this.password2 == null || this.password2.trim().equals("")) {
 			isOK = false;
-			errors.put("password2", "È·ÈÏÃÜÂë²»ÄÜÎª¿Õ£¡");
+			errors.put("password2", "ç¡®è®¤å¯†ç ä¸èƒ½ä¸ºç©ºï¼");
 		} else {
 			if (!this.password.equals(this.password2)) {
 				isOK = false;
-				errors.put("password2", "Á½´ÎÃÜÂë±ØĞëÒ»ÖÂ!");
+				errors.put("password2", "ä¸¤æ¬¡å¯†ç å¿…é¡»ä¸€è‡´!");
 			}
 		}
 

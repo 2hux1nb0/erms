@@ -1,6 +1,6 @@
 package cn.classroom.exception;
 
-//ÓÃ»§ÒÑ´æÔÚÒì³£
+//ç”¨æˆ·å·²å­˜åœ¨å¼‚å¸¸
 public class UserExistException extends Exception {
 
 	public UserExistException() {

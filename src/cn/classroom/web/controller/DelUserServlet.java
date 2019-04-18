@@ -21,7 +21,7 @@ public class DelUserServlet extends HttpServlet {
 			String id = request.getParameter("id");
 			UserDao dao = new UserDaoImpl();
 			dao.deleteUser(id);
-			request.setAttribute("alert", "É¾³ı³É¹¦£¡");
+			request.setAttribute("alert", "åˆ é™¤æˆåŠŸï¼");
 			BusinessService service = new BusinessServiceImpl();
 			QueryResult qr = service.queryUser();
 			request.setAttribute("queryresult", qr);
@@ -29,7 +29,7 @@ public class DelUserServlet extends HttpServlet {
 			.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "É¾³ıÊ§°Ü!");
+			request.setAttribute("message", "åˆ é™¤å¤±è´¥!");
 		}
 	}
 

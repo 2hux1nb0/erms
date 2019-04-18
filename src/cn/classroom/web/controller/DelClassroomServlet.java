@@ -29,7 +29,7 @@ public class DelClassroomServlet extends HttpServlet {
 			dao2.deleteArrangeByClassroom(room_no);
 			ActivityDao dao3 = new ActivityDaoImpl();
 			dao3.deleteActivityByClassroom(room_no);
-			request.setAttribute("alert", "É¾³ı³É¹¦£¡");
+			request.setAttribute("alert", "åˆ é™¤æˆåŠŸï¼");
 			BusinessService service = new BusinessServiceImpl();
 			QueryResult qr = service.queryClassroom();
 			request.setAttribute("queryresult", qr);
@@ -39,7 +39,7 @@ public class DelClassroomServlet extends HttpServlet {
 							request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "É¾³ıÊ§°Ü!");
+			request.setAttribute("message", "åˆ é™¤å¤±è´¥!");
 		}
 	}
 

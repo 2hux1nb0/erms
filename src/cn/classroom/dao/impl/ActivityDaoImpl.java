@@ -11,7 +11,7 @@ import cn.classroom.domain.Activity;
 import cn.classroom.exception.DaoException;
 import cn.classroom.utils.JdbcUtils;
 
-//ActivityDao的实现类
+//ActivityDao鐨勫疄鐜扮被
 public class ActivityDaoImpl implements ActivityDao {
 	public void addActivity(Activity activity) {
 		Connection conn = null;

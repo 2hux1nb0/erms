@@ -23,7 +23,7 @@ public class ActivityManaServlet extends HttpServlet {
 			.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("message", "²é¿´»î¶¯ÉêÇëÊ§°Ü£¡");
+			request.setAttribute("message", "æŸ¥çœ‹æ´»åŠ¨ç”³è¯·å¤±è´¥ï¼");
 			request.getRequestDispatcher("/message.jsp")
 			.forward(request, response);
 		}

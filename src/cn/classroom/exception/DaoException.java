@@ -1,6 +1,6 @@
 package cn.classroom.exception;
 
-//Êı¾İ¿â²Ù×÷Òì³£
+//æ•°æ®åº“æ“ä½œå¼‚å¸¸
 public class DaoException extends RuntimeException {
 
 	public DaoException() {
