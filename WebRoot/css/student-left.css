@@ -148,3 +148,7 @@ body {
 .third_button:before {
 	content: "3";
 }
+
+.forth_button:before {
+	content: "4";
+}
