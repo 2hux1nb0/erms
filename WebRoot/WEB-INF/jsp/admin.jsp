@@ -8,7 +8,7 @@
 			href="${pageContext.request.contextPath }/css/user.css">
 	</head>
 	<frameset rows="95,*" frameborder="no" border="0" framespacing="0">
-		<frame src="${pageContext.request.contextPath }/head.jsp" name="head" scrolling="No" noresize="noresize" />
+		<frame src="${pageContext.request.contextPath }/head.jsp?id=${id }&username=${username }" name="head" scrolling="No" noresize="noresize" />
 		<frameset cols="242px,*" frameborder="no" border="0" framespacing="0">
 			<frame src="${pageContext.request.contextPath }/servlet/AdminLeftUIServlet" scrolling="No" noresize="noresize" name="left" />
 			<frame src="${pageContext.request.contextPath }/servlet/MainUIServlet" scrolling="No" noresize="noresize" name="main" />

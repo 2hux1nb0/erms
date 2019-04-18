@@ -14,7 +14,7 @@
 			<span id="version">V1.0</span>
 		</div>
 		<div id="l" class="inline">
-			<a id="logout" href="index.jsp" target="_parent">退出登录</a>
+			<span>hello!&nbsp;<a href='${pageContext.request.contextPath }/servlet/MyInfoUIServlet?id=${pageContext.request.getParameter("id") }' target="main">${pageContext.request.getParameter("username")}</a>&nbsp;&nbsp;<a id="logout" href="index.jsp" target="_parent">退出登录</a></span>
 		</div>
 	</body>
 </html>
